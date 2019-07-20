@@ -1,0 +1,83 @@
+<html>
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>TRANG QUẢN TRỊ</title>
+
+	<script src="jquery.dataTables.min.js"></script>
+    <script src="dataTables.bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function() {
+    var table = $("#tabledulieu").DataTable( {
+        responsive: true,
+        "language": {
+                "infoEmpty": "Dữ liệu rỗng",
+                "emptyTable": "Chưa có dữ liệu nào",
+                "processing": "Đang xử lý...",
+                "search": "Tìm kiếm:",
+                "loadingRecords": "Đang load dữ liệu...",
+                "zeroRecords": "không tìm thấy dữ liệu",
+                "infoFiltered": "(Được từ tổng số MAX dòng dữ liệu)",
+                "paginate": {
+                    "first": "|<",
+                    "last": ">|",
+                    "next": ">>",
+                    "previous": "<<"
+                }
+            },
+            "lengthMenu": [[2, 5, 10, 15, 20, 25, 30, -1], [2, 5, 10, 15, 20, 25, 30, "Tất cả"]]
+    } );
+    new $.fn.dataTable.FixedHeader( table );
+	} );
+    </script>
+	
+	
+	<title>Quản Lý Sản Phẩm</title>
+</head>
+
+<body>
+
+	<div class="container">
+	<table border="1" align="center"  class="table table-bordered" id="tabledulieu">
+    	<caption><h2>Quản Lý Sản Phẩm</h2></caption>
+        <thead>
+        	<tr>
+            	<th> Mã Sản Phẩm</th>
+                <th> Tên Sản Phẩm</th>
+                <th> Mô Tả </th>
+                <th> Giá Sản Phẩm</th>
+                <th> Số Lượng </th>
+                <th> Loại Sản Phẩm</th>
+                <th> Nhà Sản Xuất</th>
+                <th> Hình ảnh Sản Phẩm</th>
+                <th> Sửa</th>
+                <th> Xóa</th>
+            </tr>
+        
+        </thead>
+				<tr>
+					<td>{$row["idsp"]}</td>
+					<td>{$row["tenSP"]}</td>
+					<td>{$row["moTa"]}</td>
+					<td>{$row["gia"]}</td>
+					<td>{$row["soLuong"]}</td>
+					<td>{$row["tenloai"]} </td>
+					<td>{$row["ten_NSX"]}</td>
+					<td>Ảnh</td>
+					<td><button type="."button".">SỬA </button></a></td>
+					<td><a href=""><button type="button">XÓA</button></a></td>
+				</tr>
+    </table>
+</div>
+<div>
+		<a style="margin-left: 45%"><button type="button" onClick="quay_lai_trang_truoc()">QUAY LẠI</button></a>
+		<a href="http:\\localhost:8090\admin\add_prod.php"><button style="margin-left: 5%"type="button" onClick="insert()">THÊM SẢN PHẨM</button></a>
+	</div>
+  <script>
+      function quay_lai_trang_truoc(){
+          history.back();
+      }
+  </script>
+</body>
+</html>

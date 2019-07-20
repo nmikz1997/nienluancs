@@ -1,0 +1,25 @@
+<SCRIPT LANGUAGE="JavaScript">
+      function confirmAction() {
+        return confirm("Bạn có muốn xóa?")
+      }
+ 
+</SCRIPT>
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+<form action="http://bcdonline.net/" method="POST" name="bcdonline" onSubmit="return confirmAction()">
+<label>Nhập gì đó: </label>
+<input type="text" name="u" />
+<input type=submit name="Submit" value="Submit" />
+</form>
+
+<a href="http://bcdonline.net/" title="BCDONLINE CONFIRM YES/ NO" onclick="return confirmAction()">Click demo on link</a>
+
+
+</body>
+</html>
